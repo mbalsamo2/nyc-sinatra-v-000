@@ -6,26 +6,29 @@
 
   <label for="name">Figure Name: </label><input type="text" name="figure[name]" id="figure_name">
 
-  <h3>Select or Create a Landmark:</h3>
+  <h3>Select a Landmark:</h3>
   <%@landmarks.each do |landmark| %>
-    <input type="checkbox" name="figure[landmark_ids][]"  value="<%= landmark.id %>">
+    <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>" value="<%= landmark.id %>" >
     <label for="<%= landmark.name %>"><%= landmark.name %></label>
   <%end%>
 
   <br><br>
 
+  <h3>And/Or Create a New Landmark:</h3>
   <label for="landmark_name">Landmark Name: </label><input type="text" name="landmark[name]" id="new_landmark">
+  <label for="landmark_year_completed">Landmark Year Completed: </label><input type="text" name="landmark[year_completed]" id="new_landmark_year_completed">
 
   <br><br>
 
-  <h3>Select or Create a Title:</h3>
+  <h3>Select a Title:</h3>
   <%@titles.each do |title| %>
-    <input type="checkbox" name="figure[title_ids][]"  value="<%= title.id %>">
+    <input type="checkbox" name="figure[title_ids][]" id="title_<%=title.id%>" value="<%= title.id %>">
     <label for="<%= title.name %>"><%= title.name %></label>
   <%end%>
 
   <br><br>
 
+  <h3>And/Or Create a New Title:</h3>
   <label for="title_name">Title Name: </label><input type="text" name="title[name]" id="new_title">
 
   <br><br>
